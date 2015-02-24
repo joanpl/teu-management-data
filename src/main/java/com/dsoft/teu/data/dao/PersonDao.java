@@ -12,6 +12,9 @@ public interface PersonDao {
 	
 	void deletePersonByssn(String ssn);
 	
+	Person findbySsn(String ssn);
+	
+	void updatePerson(Person person);
 	
 
 }
