@@ -10,10 +10,8 @@ public interface PersonService {
 	
 	List<Person> findAllPersons();
 	
-	void deletePersonbySsn(String ssn);
+	void deletePersonById(String id);
 	
-	void updatePerson(Person person);
-	
-	
+	void updatePerson(Person person);	
 
 }

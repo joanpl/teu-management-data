@@ -22,13 +22,15 @@ public class PersonServiceImpl implements PersonService {
 		return dao.findAllPersons();
 	}
 
-	public void deletePersonbySsn(String ssn) {
-		dao.deletePersonByssn(ssn);
+	public void deletePersonById(String id) {
+		dao.deletePersonById(id);
 
 	}
 
 	public void updatePerson(Person person) {
 		dao.updatePerson(person);
 	}
+
+	
 
 }

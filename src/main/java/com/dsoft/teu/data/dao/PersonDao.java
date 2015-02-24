@@ -10,9 +10,9 @@ public interface PersonDao {
 	
 	List<Person> findAllPersons();
 	
-	void deletePersonByssn(String ssn);
+	void deletePersonById(String id);
 	
-	Person findbySsn(String ssn);
+	List<Person> findbyNames(String firstName,String lastName);
 	
 	void updatePerson(Person person);
 	

@@ -4,10 +4,10 @@ import java.util.List;
 
 
 
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.stereotype.Repository;
 
 import com.dsoft.teu.data.model.Person;
 
@@ -24,16 +24,18 @@ public abstract class PersonDaoImpl extends AbstractDao implements PersonDao {
 		return (List<Person>) criteria.list();
 	}
 
-	public void deletePersonByssn(String ssn) {
-		Query query = getSession().createSQLQuery("delete from Person where ssn = :ssn");
+	public void deletePersonByLastName(String ssn) {
+		Query query = getSession().createSQLQuery("delete from Person where lastName = :ssn");
 		query.setString("ssn", ssn);
 		query.executeUpdate();		
 	}
 
-	public Person findbySsn(String ssn) {
+	@SuppressWarnings("unchecked")
+	public List<Person> findbyNames(String firstName, String lastName) {
 		Criteria criteria = getSession().createCriteria(Person.class);
-		criteria.add(Restrictions.eq("ssn",ssn));
-		return (Person) criteria.uniqueResult();
+		criteria.add(Restrictions.eq("firstName",firstName));
+		criteria.add(Restrictions.eq("lastName",lastName));
+		return (List<Person>) criteria.list();
 	}
 
 	public void updatePerson(Person person) {
