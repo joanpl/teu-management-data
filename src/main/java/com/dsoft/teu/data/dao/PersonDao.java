@@ -10,11 +10,10 @@ public interface PersonDao {
 	
 	List<Person> findAllPersons();
 	
-	void deletePersonById(String id);
+	void deletePersonById(Integer id);
 	
 	List<Person> findbyNames(String firstName,String lastName);
 	
 	void updatePerson(Person person);
 	
-
 }

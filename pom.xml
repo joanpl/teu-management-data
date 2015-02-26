@@ -16,11 +16,13 @@
 		<mysql.version>5.1.31</mysql.version>
 		<joda-time.version>2.3</joda-time.version>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
-		<springframework.version>4.0.6.RELEASE</springframework.version>
-		<hibernate.version>4.3.6.Final</hibernate.version>
+		<springframework.version>4.1.5.RELEASE</springframework.version>
+		<hibernate.version>4.3.8.Final</hibernate.version>
 		<mysql.version>5.1.31</mysql.version>
-		<log4j.version>1.2.16</log4j.version>
-		<maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
+		<log4j.version>1.2.17</log4j.version>
+		<maven.compiler.plugin.version>3.2</maven.compiler.plugin.version>
+		<java.version>1.8</java.version>
+		<junit.version>4.7</junit.version>
 	</properties>
 
 	<dependencies>
@@ -34,7 +36,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- Spring -->
@@ -56,6 +58,11 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
 		<!-- MySQL -->
@@ -90,16 +97,24 @@
 	</dependencies>
 
 	<build>
-		<plugins>
+		<plugins>		
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven.compiler.plugin.version}</version>
-				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
-				</configuration>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.2</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<showDeprecation>true</showDeprecation>
+						<showWarnings>true</showWarnings>
+						<argLine>-Xms512m -Xmx1024m -XX:PermSize=128m
+							-XX:MaxPermSize=1024m</argLine>
+						<compilerArgument>-proc:none</compilerArgument>
+					</configuration>
+			
 			</plugin>
+			
+			
 		</plugins>
 	</build>
 

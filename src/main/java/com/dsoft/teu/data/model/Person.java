@@ -26,6 +26,10 @@ public abstract class Person {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	public int getId() {
+		return id;
+	}
+
 	@Column(name = "FIRSTNAME", nullable = false)
 	private String firstName;
 	

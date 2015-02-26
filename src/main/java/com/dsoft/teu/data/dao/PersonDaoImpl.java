@@ -24,9 +24,9 @@ public abstract class PersonDaoImpl extends AbstractDao implements PersonDao {
 		return (List<Person>) criteria.list();
 	}
 
-	public void deletePersonByLastName(String ssn) {
-		Query query = getSession().createSQLQuery("delete from Person where lastName = :ssn");
-		query.setString("ssn", ssn);
+	public void deletePersonById(Integer id) {
+		Query query = getSession().createSQLQuery("delete from Person where id = :id");
+		query.setString("id", id.toString());
 		query.executeUpdate();		
 	}
 

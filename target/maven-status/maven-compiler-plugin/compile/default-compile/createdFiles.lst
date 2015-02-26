@@ -1,0 +1,11 @@
+com\dsoft\teu\data\configuration\HibernateConfiguration.class
+com\dsoft\teu\data\dao\AbstractDao.class
+com\dsoft\teu\data\model\Person.class
+com\dsoft\teu\data\dao\PersonDaoImpl.class
+com\dsoft\teu\data\dao\PersonDao.class
+com\dsoft\teu\data\model\Contact.class
+com\dsoft\teu\data\configuration\Order.class
+com\dsoft\teu\service\PersonService.class
+com\dsoft\teu\service\PersonServiceImpl.class
+com\dsoft\teu\data\configuration\Item.class
+com\dsoft\teu\AppConfig.class
