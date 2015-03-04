@@ -43,8 +43,8 @@ public class Contact implements Serializable {
 	@Column(name = "EMAIL", nullable = false)
 	private String email; //must be unique?
 	
-	@Column(name = "PHONENUMBERS", nullable = false)
-	private List<String> phoneNumbers;
+//	@Column(name = "PHONENUMBERS", nullable = false)
+//	private List<String> phoneNumbers;
 
 	
 	@PrePersist
@@ -94,13 +94,13 @@ public class Contact implements Serializable {
 		this.email = email;
 	}
 
-	public List<String> getPhoneNumbers() {
-		return phoneNumbers;
-	}
-
-	public void setPhoneNumbers(List<String> phoneNumbers) {
-		this.phoneNumbers = phoneNumbers;
-	}
+//	public List<String> getPhoneNumbers() {
+//		return phoneNumbers;
+//	}
+//
+//	public void setPhoneNumbers(List<String> phoneNumbers) {
+//		this.phoneNumbers = phoneNumbers;
+//	}
 	
 	@Override
     public int hashCode() {
@@ -108,7 +108,7 @@ public class Contact implements Serializable {
         int result = 1;
         result = prime * result + id;
         
-        String fullAddress = email + phoneNumbers.toString();
+        String fullAddress = email ;//+ phoneNumbers.toString();
         result = prime * result + ((fullAddress == null) ? 0 : fullAddress.hashCode());
         return result;
     }
